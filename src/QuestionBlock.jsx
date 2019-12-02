@@ -8,11 +8,31 @@ import {SingleQuestion} from './SingleQuestion';
 
 
 export class QuestionBlock extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+          activeQuestion: 'q0'
+        };
+        this.showNextQuestioninBlock = this.showNextQuestioninBlock.bind(this);
+    }
    
     buildAQuestionBlock = (question,answers,key) =>{
         return(
-            <SingleQuestion key={key} question={question} answers={answers} questionName={key}/>
+            <SingleQuestion 
+                showNextQuestion = {this.showNextQuestioninBlock}
+                currentQuestion = {this.state.activeQuestion}
+                key={key} 
+                question={question} 
+                answers={answers} 
+                questionName={key}
+            />
         )
+    }
+
+    showNextQuestioninBlock = (nextQuestion) =>{
+        console.log('Germain',nextQuestion);
+        this.setState({activeQuestion:nextQuestion});
     }
 
     buildAMathProblem = () =>{
@@ -28,12 +48,17 @@ render(){
     let questionBlock = [];
     let questions = this.props.questions;
     let answers = this.props.answers;
+    let viewQuestion = '';
     console.log(this.props.answers);
     let i = 0;
     for(i;i<questions.length;i++){
-        questionBlock.push(this.buildAQuestionBlock(questions[i],answers[i],'q'+i));
+        if(this.state.activeQuestion == ('q'+i))
+            {
+               viewQuestion = this.buildAQuestionBlock(questions[i],answers[i],'q'+i)
+            }
     }
-    return(<div>{questionBlock}</div>); 
+    console.log(viewQuestion);
+    return(<div>{viewQuestion}</div>); 
 }
     
 
