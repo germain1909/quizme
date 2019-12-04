@@ -12,9 +12,18 @@ export class SingleQuestion extends React.Component {
 
     }
 
+    //This is where we left off Need to 
+    //getTotalQuestions = () =>{
+
+
+    getQuestionNumber = (questionName) =>{
+        return(
+            Number(questionName.replace(/q/g,''))
+            )
+    }
+
     getNextQuestionName = (currentQuestion) =>{
-        let questionNumber = currentQuestion.replace(/q/g,'');
-        let nextQuestionNumber = Number(questionNumber) + 1;
+        let nextQuestionNumber =  this.getQuestionNumber(currentQuestion) + 1;
         let nextQuestionName = 'q'+ nextQuestionNumber;
         return nextQuestionName;
     }
