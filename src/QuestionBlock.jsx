@@ -26,8 +26,15 @@ export class QuestionBlock extends React.Component {
                 question={question} 
                 answers={answers} 
                 questionName={key}
+                totalQuestions={this.props.questions.length}
             />
         )
+    }
+
+    getQuestionNumber = (questionName) =>{
+        return(
+            Number(questionName.replace(/q/g,''))
+            )
     }
 
     showNextQuestioninBlock = (nextQuestion) =>{
@@ -49,14 +56,10 @@ render(){
     let questions = this.props.questions;
     let answers = this.props.answers;
     let viewQuestion = '';
+    let activeQuestionNum = this.getQuestionNumber(this.state.activeQuestion);
     console.log(this.props.answers);
     let i = 0;
-    for(i;i<questions.length;i++){
-        if(this.state.activeQuestion == ('q'+i))
-            {
-               viewQuestion = this.buildAQuestionBlock(questions[i],answers[i],'q'+i)
-            }
-    }
+    viewQuestion = this.buildAQuestionBlock(questions[activeQuestionNum],answers[activeQuestionNum],this.state.activeQuestion);
     console.log(viewQuestion);
     return(<div>{viewQuestion}</div>); 
 }

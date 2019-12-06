@@ -13,7 +13,9 @@ export class SingleQuestion extends React.Component {
     }
 
     //This is where we left off Need to 
-    //getTotalQuestions = () =>{
+    getTotalQuestions = () =>{
+        return this.props.totalQuestions;
+    }
 
 
     getQuestionNumber = (questionName) =>{
@@ -44,7 +46,8 @@ export class SingleQuestion extends React.Component {
 
     render(){
         let singleQuestion =
-         <div key={this.props.key +'i'} className="card" name={this.props.questionName}>   
+         <div key={this.props.key +'i'} className="card" name={this.props.questionName}> 
+        <p>Question {this.getQuestionNumber(this.props.questionName)+1}/{this.getTotalQuestions()+1}</p>
         {this.props.question}
         {this.props.answers.map((answer)=> <Answer userAnswer={answer}/>)}
         <button name={this.props.questionName} onClick={this.handleNextButtonClick}>Next Question</button>
