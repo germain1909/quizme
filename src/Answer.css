@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
 
 .answer{
     margin-top: 25px;
     margin-bottom: 25px;
 }
-.answer:hover{
-    border: 5px solid red;
-    
-} 
+
+.answer{
+    font-family:'Nanum Gothic', sans-serif, Arial, Helvetica, sans-serif;    
+}
+
+.myCheckbox{
+    position: relative;
+    top:4px;
+    width: 24px;
+	height: 24px;
+}

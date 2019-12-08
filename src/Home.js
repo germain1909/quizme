@@ -1,6 +1,7 @@
 import React from 'react';
 import {QuestionBlock} from './QuestionBlock.jsx'
 import './Home.css';
+import logo from "./images/theGuildLogoResize.png"
 
 
 const questions =[
@@ -70,7 +71,8 @@ export function Home() {
     let i = 0;
     return (
         <div className="background">
-             <QuestionBlock questions={questions} answers={answers} key = {i}/>
+        <img className="logo" src={logo} />
+        <QuestionBlock questions={questions} answers={answers} key = {i}/>
         </div>
        
     );
