@@ -4,8 +4,8 @@ import './Home.css';
 
 
 const questions =[
-    'When you go to the club what brand shoes are you wearing',
-    'What snack are you getting off of the ice cream truck',
+    'Slack Module Number 1: Find Pinned Item in Slack',
+    'Slack module Number 2: Introduce to the team on slack',
     'When asked who you would vote for president in 2020 you reply?',
     'When asked who influenced you musically you reply',
     'At your concert what is your audience interaction?',
@@ -16,16 +16,16 @@ const questions =[
 
 let answers = [
 
-    [   'Nike',
-        'Balenciaga',
-        'Louis Voutton',
-        'Gucci'
+    [   'Step 1 go to the theguildheadquarters@slack.com and log in',
+        'Step2 find the #onboarding channel in slack and join the onboarding channel if you are not already a member',
+        'Step3 find the pinned documents in the onboarding channel',
+        'Step4 read the technology onboarding document'
     ],
     [
-        'Bomb Pop',
-        'Fudge Bar',
-        'Snow Cone',
-        'Ice Cream Sandwich'
+        'Step 1 Go to the #general channel inside of the guild slack workspace',
+        'Step 2 Right a short introduction about yourself',
+        'Step 3 In the intro you must include your hometown, favorite movie, and the word green',
+        'Step 4 Send your introduction to the General channel '
     ],
     [
         'Kanye West',
