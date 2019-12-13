@@ -7,12 +7,8 @@ import logo from "./images/theGuildLogoResize.png"
 const questions =[
     'Slack Module Number 1: Find Pinned Item in Slack',
     'Slack module Number 2: Introduce to the team on slack',
-    'When asked who you would vote for president in 2020 you reply?',
-    'When asked who influenced you musically you reply',
-    'At your concert what is your audience interaction?',
-    'Which of these singers would you tap for a feature',
-    'You just pulled up to the liquor store whats your go to alchol?',
-    'You on tour on the road what fast food restaurant will you stop at'
+    'Zoom Module 1: Get a zoom account',
+    'Doodle Module 1: Take a doodle for our next business meeting'
 ]
 
 let answers = [
@@ -29,50 +25,23 @@ let answers = [
         'Step 4 Send your introduction to the General channel '
     ],
     [
-        'Kanye West',
-        'I dont vote',
-        'Lets put Obama back in there',
-        'Kamala Harris'
+        'Step 1: Go to zoom.us',
+        'Go to the following link',
+        'Will there be people zoooming in to the orientation?',
     ],
     [
-        'Michael Jackson',
-        'Tupac',
-        'Notorious BIG',
-        'Jay Z',
-    ],
-    [
-        'Mosh Pit',
-        'Crowd Surf',
-        'Bring audience on stage',
-        'Giant floating ballon of your face'
-    ],
-    [
-        'Beyonce',
-        'Whitney Houston',
-        'Mariah Carey',
-        'SZA'
-    ],
-    [
-        'Hennessey',
-        'Patron',
-        'Moet',
-        'Ciroc'
-    ],
-    [
-        'Popeyes',
-        'Taco Bell',
-        'McDonalds',
-        'In & Out'
+        'Step 1: Copy the link in step 2 and copy it',
+        'Step 2: https://doodle.com/poll/4x2ggedsxeduhrnr',
+        'Go to your browser, open a new tab and paste in the link that you copied',
     ]
 
 ]
 
 export function Home() {
-    let i = 0;
     return (
         <div className="background">
         <img className="logo" src={logo} />
-        <QuestionBlock questions={questions} answers={answers} key = {i}/>
+        <QuestionBlock questions={questions} answers={answers}/>
         </div>
        
     );

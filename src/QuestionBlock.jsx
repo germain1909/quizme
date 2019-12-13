@@ -38,7 +38,6 @@ export class QuestionBlock extends React.Component {
     }
 
     showNextQuestioninBlock = (nextQuestion) =>{
-        console.log('Germain',nextQuestion);
         this.setState({activeQuestion:nextQuestion});
     }
 
