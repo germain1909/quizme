@@ -123,7 +123,7 @@ export class SingleQuestion extends React.Component {
              <div key={'end'}className="card" name={'end'}> 
                 <p>Thank you for completing The Guild Technology Module</p>
                 <span>
-                    <button onClick={this.handleFinalPagePreviousClick}>Previous Task</button>
+                    <button onClick={this.handleFinalPagePreviousClick}>Go Back</button>
                 </span>
             </div>;
 
