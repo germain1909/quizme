@@ -6,7 +6,8 @@ export class SingleQuestion extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          isVisible: false
+          isVisible: false,
+          isComplete: false
         };
         this.handleNextButtonClick = this.handleNextButtonClick.bind(this);
 
@@ -38,7 +39,8 @@ export class SingleQuestion extends React.Component {
 
         if(nextQuestionNumber == totalQuestions)
         {
-             this.props.showNextQuestion('done');
+             this.setState({isComplete:true});
+             this.setState({isVisible:false});
              //this.setState({isVisible: false});
              console.log("HHHHHHHH")
         }
@@ -68,8 +70,12 @@ export class SingleQuestion extends React.Component {
             <button>Previous Task</button>
         </span>
          </div>;
-          return(
-            singleQuestion
-        )
+
+        let finito =
+                <div key={'end'}className="card" name={'end'}> 
+                <p>Thank you for completing The Guild Technology Module</p>
+                </div>;
+
+          return(this.state.isComplete?finito:singleQuestion)
     }
 }
