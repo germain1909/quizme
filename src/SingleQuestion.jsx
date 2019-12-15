@@ -11,6 +11,7 @@ export class SingleQuestion extends React.Component {
         };
         this.handleNextButtonClick = this.handleNextButtonClick.bind(this);
         this.handlePreviousButtonClick = this.handlePreviousButtonClick.bind(this);
+        this.handleFinalPagePreviousClick = this.handleFinalPagePreviousClick.bind(this);
     }
 
     //This is where we left off Need to 
