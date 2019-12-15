@@ -5,44 +5,55 @@ import logo from "./images/theGuildLogoResize.png"
 
 
 const questions =[
-    'Slack Module Number 1: Find Pinned Item in Slack',
-    'Slack module Number 2: Introduce to the team on slack',
-    'Zoom Module 1: Get a zoom account',
-    'Doodle Module 1: Take a doodle for our next business meeting'
+    'Slack Module',
+    'Zoom Module',
+    'Doodle Module'
 ]
 
 let answers = [
 
-    [   'Step 1 go to the theguildheadquarters@slack.com and log in',
-        'Step2 find the #onboarding channel in slack and join the onboarding channel if you are not already a member',
-        'Step3 find the pinned documents in the onboarding channel',
-        'Step4 read the technology onboarding document'
+    [   'Step 1 Copy the following link http://bit.ly/guildslacksignup',
+        'Step 2 Enter email',
+        'Step 3 Verify email',
+        'Step 4 Create an account with password and username',
+        'Step 5 Click #general channel and write greeting',
+        'Step 6 Click the #onboarding channel and look at the pinned documents'
     ],
     [
-        'Step 1 Go to the #general channel inside of the guild slack workspace',
-        'Step 2 Right a short introduction about yourself',
-        'Step 3 In the intro you must include your hometown, favorite movie, and the word green',
-        'Step 4 Send your introduction to the General channel '
+        'Step 1 Copy the following link https://zoom.us/j/3671283747',
+        'Step 2 Launch zoom meeting',
+        'Step 3 Join with computer audio',
+        'Step 4 Click chat icon and text greeting in zoom group chat',
     ],
     [
-        'Step 1: Go to zoom.us',
-        'Go to the following link',
-        'Will there be people zoooming in to the orientation?',
-    ],
-    [
-        'Step 1: Copy the link in step 2 and copy it',
-        'Step 2: https://doodle.com/poll/4x2ggedsxeduhrnr',
-        'Go to your browser, open a new tab and paste in the link that you copied',
+        'Step 1: Copy the following link https://doodle.com/poll/4x2ggedsxeduhrnr ',
+        'Step 2: Enter participant name',
+        'Step 3: Submit'
     ]
 
 ]
 
-export function Home() {
-    return (
+export class Home extends React.Component {
+
+    //copied constructor from single question
+    constructor(props) {
+        super(props);
+        this.state = {
+          isComplete: false
+        };
+        //this.handleNextButtonClick = this.handleNextButtonClick.bind(this);
+
+    }
+
+
+    render(){
+        return (
         <div className="background">
         <img className="logo" src={logo} />
         <QuestionBlock questions={questions} answers={answers}/>
         </div>
+        )
+    }
        
-    );
+
   }

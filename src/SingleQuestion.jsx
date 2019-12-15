@@ -31,16 +31,28 @@ export class SingleQuestion extends React.Component {
     }
 
     handleNextButtonClick  = (e) =>{
-        console.log(e.target.parentNode);
-        console.log(this.props);
         let nextQuestionName = this.getNextQuestionName(this.props.questionName)
-        console.log('next question',nextQuestionName);
-        if(this.props.currentQuestion == this.props.questionName)
+        let currentQuestionNumber = this.getQuestionNumber(this.props.currentQuestion);
+        let  totalQuestions = this.getTotalQuestions();
+        let nextQuestionNumber = this.getQuestionNumber(nextQuestionName);
+
+        if(nextQuestionNumber == totalQuestions)
+        {
+             this.props.showNextQuestion('done');
+             //this.setState({isVisible: false});
+             console.log("HHHHHHHH")
+        }
+        else if(this.props.currentQuestion == this.props.questionName)
          {   
              this.props.showNextQuestion(nextQuestionName);
              this.setState({isVisible: false});
              
          }
+
+         console.log('current question'+currentQuestionNumber,
+                     'next question'+nextQuestionNumber, 
+                     'total questions'+totalQuestions
+                     )
         
     }
 
@@ -48,10 +60,13 @@ export class SingleQuestion extends React.Component {
     
         let singleQuestion =
          <div key={this.props.key +'i'} className="card" name={this.props.questionName}> 
-        <p>Question {this.getQuestionNumber(this.props.questionName)+1}/{this.getTotalQuestions()+1}</p>
+        <p>Tasks {this.getQuestionNumber(this.props.questionName)+1}/{this.getTotalQuestions()}</p>
         {this.props.question}
         {this.props.answers.map((answer)=> <Answer userAnswer={answer}/>)}
-        <button name={this.props.questionName} onClick={this.handleNextButtonClick}>Next Question</button>
+        <span>
+            <button onClick={this.handleNextButtonClick}>Next Task</button>
+            <button>Previous Task</button>
+        </span>
          </div>;
           return(
             singleQuestion
