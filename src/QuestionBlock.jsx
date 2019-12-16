@@ -49,10 +49,8 @@ render(){
     let answers = this.props.answers;
     let viewQuestion = '';
     let activeQuestionNum = this.getQuestionNumber(this.state.activeQuestion); // this is where we  have to change the 'done' string to work
-    console.log(this.props.answers);
     let i = 0;
     viewQuestion = this.buildAQuestionBlock(questions[activeQuestionNum],answers[activeQuestionNum],this.state.activeQuestion);
-    console.log(viewQuestion);
     return(<div>{viewQuestion}</div>); 
 }
     

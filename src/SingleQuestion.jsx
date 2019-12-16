@@ -49,7 +49,6 @@ export class SingleQuestion extends React.Component {
              this.setState({isComplete:true});
              this.setState({isVisible:false});
              //this.setState({isVisible: false});
-             console.log("HHHHHHHH")
         }
         else if(this.props.currentQuestion == this.props.questionName)
          {   
@@ -58,10 +57,10 @@ export class SingleQuestion extends React.Component {
              
          }
 
-         console.log('current question'+currentQuestionNumber,
-                     'next question'+nextQuestionNumber, 
-                     'total questions'+totalQuestions
-                     )
+        //  console.log('current question'+currentQuestionNumber,
+        //              'next question'+nextQuestionNumber, 
+        //              'total questions'+totalQuestions
+        //              )
         
     }
 
@@ -76,7 +75,6 @@ export class SingleQuestion extends React.Component {
              this.setState({isComplete:true});
              this.setState({isVisible:false});
              //this.setState({isVisible: false});
-             console.log("HHHHHHHH")
         }
 
         if(this.props.currentQuestion == this.props.questionName)
