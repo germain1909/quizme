@@ -38,29 +38,19 @@ export class QuestionBlock extends React.Component {
     }
 
     showNextQuestioninBlock = (nextQuestion) =>{
-        console.log('Germain',nextQuestion);
         this.setState({activeQuestion:nextQuestion});
     }
 
-    buildAMathProblem = () =>{
-        let number1 = Math.floor((Math.random() * 100) )
-        let number2 = Math.floor((Math.random() * 100) )
-        return(
-            <div>What is {number1} + {number2} </div>
-        )
-    }
+   //will probably have to write a get content type function baseed on the state
 
-   
 render(){
     let questionBlock = [];
     let questions = this.props.questions;
     let answers = this.props.answers;
     let viewQuestion = '';
-    let activeQuestionNum = this.getQuestionNumber(this.state.activeQuestion);
-    console.log(this.props.answers);
+    let activeQuestionNum = this.getQuestionNumber(this.state.activeQuestion); // this is where we  have to change the 'done' string to work
     let i = 0;
     viewQuestion = this.buildAQuestionBlock(questions[activeQuestionNum],answers[activeQuestionNum],this.state.activeQuestion);
-    console.log(viewQuestion);
     return(<div>{viewQuestion}</div>); 
 }
     

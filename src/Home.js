@@ -1,77 +1,59 @@
 import React from 'react';
 import {QuestionBlock} from './QuestionBlock.jsx'
 import './Home.css';
+import logo from "./images/theGuildLogoResize.png"
 
 
 const questions =[
-    'When you go to the club what brand shoes are you wearing',
-    'What snack are you getting off of the ice cream truck',
-    'When asked who you would vote for president in 2020 you reply?',
-    'When asked who influenced you musically you reply',
-    'At your concert what is your audience interaction?',
-    'Which of these singers would you tap for a feature',
-    'You just pulled up to the liquor store whats your go to alchol?',
-    'You on tour on the road what fast food restaurant will you stop at'
+    'Slack Module',
+    'Zoom Module',
+    'Doodle Module'
 ]
 
 let answers = [
 
-    [   'Nike',
-        'Balenciaga',
-        'Louis Voutton',
-        'Gucci'
+    [   'Step 1 Copy the following link http://bit.ly/guildslacksignup',
+        'Step 2 Enter email',
+        'Step 3 Verify email',
+        'Step 4 Create an account with password and username',
+        'Step 5 Click #general channel and write greeting',
+        'Step 6 Click the #onboarding channel and look at the pinned documents'
     ],
     [
-        'Bomb Pop',
-        'Fudge Bar',
-        'Snow Cone',
-        'Ice Cream Sandwich'
+        'Step 1 Copy the following link https://zoom.us/j/3671283747',
+        'Step 2 Launch zoom meeting',
+        'Step 3 Join with computer audio',
+        'Step 4 Click chat icon and text greeting in zoom group chat',
     ],
     [
-        'Kanye West',
-        'I dont vote',
-        'Lets put Obama back in there',
-        'Kamala Harris'
-    ],
-    [
-        'Michael Jackson',
-        'Tupac',
-        'Notorious BIG',
-        'Jay Z',
-    ],
-    [
-        'Mosh Pit',
-        'Crowd Surf',
-        'Bring audience on stage',
-        'Giant floating ballon of your face'
-    ],
-    [
-        'Beyonce',
-        'Whitney Houston',
-        'Mariah Carey',
-        'SZA'
-    ],
-    [
-        'Hennessey',
-        'Patron',
-        'Moet',
-        'Ciroc'
-    ],
-    [
-        'Popeyes',
-        'Taco Bell',
-        'McDonalds',
-        'In & Out'
+        'Step 1: Copy the following link https://doodle.com/poll/4x2ggedsxeduhrnr ',
+        'Step 2: Enter participant name',
+        'Step 3: Submit'
     ]
 
 ]
 
-export function Home() {
-    let i = 0;
-    return (
+export class Home extends React.Component {
+
+    //copied constructor from single question
+    constructor(props) {
+        super(props);
+        this.state = {
+          isComplete: false
+        };
+        //this.handleNextButtonClick = this.handleNextButtonClick.bind(this);
+
+    }
+
+
+    render(){
+        return (
         <div className="background">
-             <QuestionBlock questions={questions} answers={answers} key = {i}/>
+        <img className="logo" src={logo} />
+        <QuestionBlock questions={questions} answers={answers}/>
         </div>
+        )
+    }
        
-    );
+
   }
